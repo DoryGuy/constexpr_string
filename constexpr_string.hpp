@@ -13,8 +13,7 @@
 
 namespace jason_turner_utils {
 
-// can this be a constexpr ? (GWP)
-#define TEN_MEGA_BYTES  (10 * 1024 * 1024)
+constexpr int TEN_MEGA_BYTES{10 * 1024 * 1024};
 
 // space to hold more than enough of the string.
 struct oversized_array {
@@ -50,4 +49,4 @@ consteval auto to_string_view(auto callable) -> std::string_view {
 
 } // namespace jason_turner_utils
 
-#endif
+#endif // CONSTEXPR_STRING_HPP

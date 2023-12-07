@@ -1,8 +1,10 @@
 #include "constexpr_string.hpp"
 
-////#define FMT_HEADER_ONLY
+// https://hackingcpp.com/cpp/libs/fmt.html
+//#define FMT_HEADER_ONLY
 //#include <fmt/format.h>
-//#include <print> c++x23 only
+
+//#include <print> // c++2023 only
 #include <iostream>
 
 
@@ -20,11 +22,11 @@ int main() {
    // create a lambda to return a string. Necessary to create a constexpr string.
    constexpr auto make_data = [](){ return make_string("Hello Jason ", 3); };
 
-   constexpr static auto sv = to_string_view(make_data);
+   constexpr static auto str_view = to_string_view(make_data);
 
-   //fmt::print("{}: '{}'", sv.size(), sv);
-   //std::print("{}: '{}'", sv.size(), sv);
-   std::cout << sv.size() << ": " << sv << std::endl;
+   //fmt::print("{}: '{}'", str_view.size(), str_view);
+   //std::print("{}: '{}'", str_view.size(), str_view);
+   std::cout << str_view.size() << ": " << str_view << std::endl;
 
    return 0;
 }

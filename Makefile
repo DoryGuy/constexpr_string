@@ -18,7 +18,7 @@ LIBRARIES= \
 	-lfmt
 
 # The build target 
-TARGET = test_program
+TARGET = test_program.exe
  
 all: $(TARGET)
  
